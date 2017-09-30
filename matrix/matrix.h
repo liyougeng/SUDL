@@ -38,9 +38,10 @@ enum {
 template <typename T>
 void alloc_matrix(T* &_val, int r, int c) {
     _val = new T[r * c];
-    for (size_t i = 0; i < r * c; i ++) {
-        _val[i] = 0;
-    }
+    memset(_val, 0, sizeof(T) * r * c);
+//     for (size_t i = 0; i < r * c; i ++) {
+//         _val[i] = 0;
+//     }
 }
 
 template <typename T>
